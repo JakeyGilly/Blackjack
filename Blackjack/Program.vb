@@ -4,15 +4,13 @@
         Dim move As String
         Dim cardsNum As Integer = 2
         Dim card(11) As Integer
-        For i As Integer = 0 To 1
-            Dim random As Integer = GenRandom()
-            card(i) = random
-            For j As Integer = 0 To card.Length - 1
-                While card(j) = random And j <> i
-                    random = GenRandom()
-                    card(i) = random
-                End While
-            Next
+        Dim random As Integer = GenRandom()
+        card(i) = random
+        For j As Integer = 0 To card.Length - 1
+            While card(j) = random And j <> i
+                random = GenRandom()
+                card(i) = random
+            End While
         Next
         While playing And GetLength(card) < 11 And Check21(card) < 21
             Do
